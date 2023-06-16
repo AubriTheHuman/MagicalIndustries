@@ -1,0 +1,35 @@
+{
+    "itemGroup.ami.oretab": "AMI Ores",
+    "itemGroup.ami.metaltab": "AMI Metals",
+    "itemGroup.ami.machinetab": "AMI Machines",
+    "itemGroup.ami.fluidtab": "AMI Fluids",
+    "itemGroup.ami.materialtab": "AMI Materials",
+    "itemGroup.ami.biotab": "AMI Bioprocessing Products",
+    "itemGroup.ami.petrotab": "AMI Petrochemical Products",
+    "itemGroup.ami.intermediatestab": "AMI Intermediate Products",
+    "itemGroup.ami.toolstab": "AMI Tools",
+    
+    "jei.category.ami.stabilityobjects": "Stability Objects",
+    "jei.category.ami.aworkingtree": "Processing Tree",
+    "item.ami.dummy_workingtree_item": "Processing Tree",
+    
+    "item.malum.malicious_spirit": "Malicious Spirit",
+    "item.malum.magnetic_spirit": "Magnetic Spirit",
+    "item.malum.ruinous_spirit": "Ruinous Spirit",
+    "item.malum.tempestuous_spirit": "Tempestuous Spirit",
+    "item.malum.electric_spirit": "Electric Spirit",
+    "item.malum.mechanical_spirit": "Mechanical Spirit",
+    "item.malum.herbal_spirit": "Herbal Spirit",
+    
+    "item.malum.voidial_spirit": "Voidial Spirit",
+    "item.malum.deathly_spirit": "Deathly Spirit",
+    "item.malum.astral_spirit": "Astral Spirit",
+    "item.malum.corporeal_spirit": "Corporeal Spirit",
+    "item.malum.chaotic_spirit": "Chaotic Spirit",
+    "item.malum.frozen_spirit": "Frozen Spirit",
+    "item.malum.hungry_spirit": "Hungry Spirit",
+    
+    "item.malum.radiative_spirit": "Radiative Spirit",
+    "item.malum.thoughtful_spirit": "Thoughtful Spirit",
+    "item.malum.enlightened_spirit": "Enlightened Spirit"
+}
