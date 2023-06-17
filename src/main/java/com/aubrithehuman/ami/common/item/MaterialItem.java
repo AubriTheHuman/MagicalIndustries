@@ -6,8 +6,9 @@ import javax.annotation.Nullable;
 
 import com.aubrithehuman.ami.AMI;
 import com.aubrithehuman.ami.api.item.BaseItem;
-import com.aubrithehuman.ami.api.item.material.MaterialForm;
+import com.aubrithehuman.ami.api.item.material.Material;
 import com.aubrithehuman.ami.api.item.material.MaterialState;
+import com.aubrithehuman.ami.api.item.material.properties.MaterialForm;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -24,21 +25,16 @@ public class MaterialItem extends BaseItem {
 	final MaterialForm form;
 	MaterialState state;
 
-	public MaterialItem(Properties properties, ResourceLocation materialDefinition, MaterialForm form) {
+	public MaterialItem(Properties properties, ResourceLocation material, MaterialForm form) {
 		super(properties);
-		this.materialDefinition = materialDefinition;
+		this.materialDefinition = material;
 		this.form = form;
 	}
 	
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> text, TooltipFlag flag) {
 		//put our description in
-		if(Screen.hasControlDown()) {
-			text.add(0, Component.translatable(this.getControlDescKey()));
-		} else {
-			text.add(0, Component.literal("Press ").withStyle(ChatFormatting.DARK_GRAY).append("[ctrl]").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.GRAY).append(" for item description").withStyle(ChatFormatting.DARK_GRAY));
-		}
-		
+				
 		super.appendHoverText(stack, level, text, flag);
 	}
 
@@ -55,7 +51,7 @@ public class MaterialItem extends BaseItem {
 	 */
 	@Override
 	public String getControlDescKey() {
-		return "itemShiftDesc." + AMI.MOD_ID + "." + materialDefinition.getPath().replace('/', '.');
+		return "itemShiftDesc." + AMI.MOD_ID + "." + materialDefinition.toString().replace('/', '.').replace(':', '.');
 	}
 	
 	@Override

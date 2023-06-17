@@ -2,14 +2,23 @@ package com.aubrithehuman.ami.api.item.material;
 
 public enum MaterialState {
 
-	SOLID,
-	FROZEN,
-	HEATED_PLASTIC,
-	HEATED_ELASTIC,
-	MOLTEN,
-	LIQUID,
-	GASEOUS,
-	PLASMA;
+	FROZEN("Frozen"),
+	SOLID("Solid"),
+	HEATED_PLASTIC("Heated"),
+	HEATED_ELASTIC("Heated"),
+	LIQUID("Liquid"),
+	MOLTEN("Molten"),
+	VAPOR("Vapor"),
+	GASEOUS("Gaseous"),
+	PLASMA("Plasma");
 	
+	String displayName;
 	
+	MaterialState(String disp) {
+		displayName = disp;
+	}
+	
+	public String getDisplayName() {
+		return displayName;
+	}
 }

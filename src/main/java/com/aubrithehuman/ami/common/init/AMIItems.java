@@ -1,7 +1,14 @@
 package com.aubrithehuman.ami.common.init;
 
-import com.aubrithehuman.ami.AMI;
+import java.util.HashMap;
+import java.util.Map;
 
+import com.aubrithehuman.ami.AMI;
+import com.aubrithehuman.ami.api.item.material.Material;
+import com.aubrithehuman.ami.api.item.material.properties.MaterialForm;
+import com.aubrithehuman.ami.common.item.MaterialItem;
+
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -40,13 +47,31 @@ public class AMIItems {
 	public static final RegistryObject<Item> DUMMY_WORKINGTREE_ITEM = ITEMS.register("dummy_workingtree_item", 
 			() -> new Item(new Item.Properties()));	
 	
-
+	//Material Items
+	public static final Map<ResourceLocation, Map<MaterialForm, RegistryObject<Item>>> MATERIAL_ITEMS = new HashMap<>();
+	 
+	static {
+		//Generate Materials
+		for (ResourceLocation material : AMI.MATERIALS.getData().keySet()) {
+			Map<MaterialForm, RegistryObject<Item>> materialFormsMap = new HashMap<>();
+			for(MaterialForm form : MaterialForm.values()) {
+				materialFormsMap.put(form, 
+						ITEMS.register(material.getPath() + "_" + form.getId(), 
+								() -> new MaterialItem(new Item.Properties().tab(AMITabs.MATERIAL_TAB), material, form)));
+			}		
+			MATERIAL_ITEMS.put(material, materialFormsMap);	
+		}
+	}
+	
     // BlockItems
     // =============================================================================================================
 	
 	
 	
 	// =============================================================================================================
+	
+	
+	
 	    
 	@OnlyIn(Dist.CLIENT)
 	public static void onClientSetup() {
