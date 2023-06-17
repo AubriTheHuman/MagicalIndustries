@@ -5,7 +5,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import com.aubrithehuman.ami.AMI;
-import com.aubrithehuman.ami.api.item.BaseItem;
+import com.aubrithehuman.ami.api.item.AMIItem;
 import com.aubrithehuman.ami.api.item.material.Material;
 import com.aubrithehuman.ami.api.item.material.MaterialState;
 import com.aubrithehuman.ami.api.item.material.properties.MaterialForm;
@@ -18,7 +18,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
-public class MaterialItem extends BaseItem {
+public class MaterialItem extends AMIItem {
 	
 	final ResourceLocation materialDefinition;
 	

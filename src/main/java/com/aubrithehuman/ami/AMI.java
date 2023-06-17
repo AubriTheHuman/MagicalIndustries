@@ -6,6 +6,7 @@ import com.aubrithehuman.ami.api.item.material.Material;
 import com.aubrithehuman.ami.api.item.material.registry.MaterialRegistry;
 import com.aubrithehuman.ami.common.init.AMIBlockEntities;
 import com.aubrithehuman.ami.common.init.AMIBlocks;
+import com.aubrithehuman.ami.common.init.AMIItemTags;
 import com.aubrithehuman.ami.common.init.AMIItems;
 import com.aubrithehuman.ami.common.init.AMIMaterialDefinitions;
 import com.aubrithehuman.ami.common.init.AMITabs;
@@ -71,6 +72,9 @@ public class AMI
 		AMIBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     	LOGGER.info("Registering BlockEntities");
 		AMIBlockEntities.BLOCK_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+    	LOGGER.info("Registering Tags");
+    	new AMIItemTags();
+		
 		
     	LOGGER.info("Magical Industries (ami) has completed registration");
         

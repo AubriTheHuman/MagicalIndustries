@@ -1,0 +1,22 @@
+{
+  "values": [
+    "ami:gold_nugget",
+    "ami:gold_block",
+    "ami:gold_dust",
+    "ami:gold_cake",
+    "ami:gold_rod",
+    "ami:gold_rounded_sheet",
+    "ami:gold_screw",
+    "ami:gold_sheet",
+    "ami:gold_tiny_dust",
+    "ami:gold_large_sheet",
+    "ami:gold_wire",
+    "ami:gold_bolt",
+    "ami:gold_ingot",
+    "ami:gold_gear",
+    "ami:gold_coil",
+    "ami:gold_spring",
+    "ami:gold_bar_stock",
+    "ami:gold_mechanical_component"
+  ]
+}

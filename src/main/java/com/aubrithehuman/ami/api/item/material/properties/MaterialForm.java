@@ -1,38 +1,45 @@
 package com.aubrithehuman.ami.api.item.material.properties;
 
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public enum MaterialForm {
 
 	//Metals
-	NORMAL(""),
-	INGOT("ingot"),
-	NUGGET("nugget"),
-	BLOCK("block"),
-	CAKE("cake"),
-	BAR_STOCK("bar_stock"),
-	SHEET("sheet"),
-	ROUNDED_SHEET("rounded_sheet"),
-	LARGE_SHEET("large_sheet"),
-	COIL("coil"),
-	WIRE("wire"),
-	ROD("rod"),
-	SPRING("spring"),
-	SCREW("screw"),
-	BOLT("bolt"),
-	GEAR("gear"),
-	MECHANICAL_COMPONENT("mechanical_component"),
-	DUST("dust"),
-	TINY_DUST("tiny_dust");
+	NORMAL("", ""),
+	INGOT("ingot", "Ingot"),
+	NUGGET("nugget", "Nugget"),
+	BLOCK("block", "Block"),
+	CAKE("cake", "Cake"),
+	BAR_STOCK("bar_stock", "Bar Stock"),
+	SHEET("sheet", "Sheet"),
+	ROUNDED_SHEET("rounded_sheet", "Rounded Sheet"),
+	LARGE_SHEET("large_sheet", "Large Sheet"),
+	COIL("coil", "Coil"),
+	WIRE("wire", "Wire"),
+	ROD("rod", "Rod"),
+	SPRING("spring", "Spring"),
+	SCREW("screw", "Screw"),
+	BOLT("bolt", "Bolt"),
+	GEAR("gear", "Gear"),
+	MECHANICAL_COMPONENT("mechanical_component", "Mechanical Component"),
+	DUST("dust", "Dust"),
+	TINY_DUST("tiny_dust", "Tiny Piles of Dust");
 	
 	String id;
+	String translation;
 	MaterialForm[] sources;
 	
-	MaterialForm(String id, MaterialForm... sources) {
+	/**
+	 * Translation only exists for datagen, it serves no purpose
+	 * @param id
+	 * @param translation
+	 * @param sources
+	 */
+	MaterialForm(String id, String translation, MaterialForm... sources) {
 		this.id = id;
+		this.translation = translation;
 		this.sources = sources;
 	}
 	
@@ -45,6 +52,9 @@ public enum MaterialForm {
 	
 	public String getId() {
 		return this.id;
+	}
+	public String getTranslation() {
+		return this.translation;
 	}
 	
 	public MaterialForm[] getSources() {

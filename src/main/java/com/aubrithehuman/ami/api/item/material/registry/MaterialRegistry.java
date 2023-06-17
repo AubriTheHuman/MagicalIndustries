@@ -62,5 +62,13 @@ public abstract class MaterialRegistry {
 		return data;
 	}
 	
+	/**
+	 * Reference this from your material registry instance
+	 * @return
+	 */
+	public Material get(ResourceLocation loc) {
+		return data.get(loc);
+	}
+	
 }
 

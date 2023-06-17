@@ -1,0 +1,22 @@
+{
+  "values": [
+    "ami:iron_nugget",
+    "ami:iron_block",
+    "ami:iron_dust",
+    "ami:iron_cake",
+    "ami:iron_rod",
+    "ami:iron_rounded_sheet",
+    "ami:iron_screw",
+    "ami:iron_sheet",
+    "ami:iron_tiny_dust",
+    "ami:iron_large_sheet",
+    "ami:iron_wire",
+    "ami:iron_bolt",
+    "ami:iron_ingot",
+    "ami:iron_gear",
+    "ami:iron_coil",
+    "ami:iron_spring",
+    "ami:iron_bar_stock",
+    "ami:iron_mechanical_component"
+  ]
+}

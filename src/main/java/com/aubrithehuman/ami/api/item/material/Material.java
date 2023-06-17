@@ -19,4 +19,8 @@ public class Material {
 		return name;
 	}
 	
+	public MaterialProperties getProperties() {
+		return this.properties;
+	}
+	
 }

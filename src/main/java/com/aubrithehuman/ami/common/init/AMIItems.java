@@ -9,6 +9,7 @@ import com.aubrithehuman.ami.api.item.material.properties.MaterialForm;
 import com.aubrithehuman.ami.common.item.MaterialItem;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagBuilder;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -18,8 +19,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class AMIItems {
 
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
-			AMI.MOD_ID);
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, AMI.MOD_ID);
 
     // Items
 	// =============================================================================================================
@@ -62,6 +62,7 @@ public class AMIItems {
 			}		
 			MATERIAL_ITEMS.put(material, materialFormsMap);	
 		}
+		
 	}
 	
     // BlockItems
