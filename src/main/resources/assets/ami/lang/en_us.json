@@ -31,5 +31,11 @@
     
     "item.malum.radiative_spirit": "Radiative Spirit",
     "item.malum.thoughtful_spirit": "Thoughtful Spirit",
-    "item.malum.enlightened_spirit": "Enlightened Spirit"
+    "item.malum.enlightened_spirit": "Enlightened Spirit",
+
+    "itemShiftLine.materialdesc": "§7Press §8§n[shift]§r §7for item description.",
+    "itemControlLine.materialproperties": "§7Press §8§n[ctrl]§r §7for material properties.",
+    "itemAltLine.materialproperties": "§7Press §8§n[alt]§r §7for material properties.",
+    "itemShiftDesc.ami.ingot": "An ingot of metal, it can be procressed \ninto several forms.",
+    "itemShiftDesc.ami.sheet": "A sheet of metal, it can be rolled or \nused to plate something."
 }

@@ -52,6 +52,7 @@ public class AMIItems {
 	 
 	static {
 		//Generate Materials
+    	AMI.LOGGER.info("Generating Material Items");
 		for (ResourceLocation material : AMI.MATERIALS.getData().keySet()) {
 			Map<MaterialForm, RegistryObject<Item>> materialFormsMap = new HashMap<>();
 			for(MaterialForm form : MaterialForm.values()) {

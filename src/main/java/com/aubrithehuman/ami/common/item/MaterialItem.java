@@ -42,21 +42,27 @@ public class MaterialItem extends BaseItem {
 	 * Give us a code for the shift description
 	 */
 	@Override
-	public String getShiftDescKey() {
-		return "itemShiftDesc." + AMI.MOD_ID + "." + form.getId();
+	public String[] getShiftDescKey() {
+		return new String[] {
+				"itemShiftLine.materialdesc",
+				"itemShiftDesc." + AMI.MOD_ID + "." + form.getId()	
+		};
 	}
 	
 	/**
 	 * Give us a code for the shift description
 	 */
 	@Override
-	public String getControlDescKey() {
-		return "itemShiftDesc." + AMI.MOD_ID + "." + materialDefinition.toString().replace('/', '.').replace(':', '.');
+	public String[] getControlDescKey() {
+		return null;
 	}
 	
 	@Override
-	public String getAltDescKey() {
-		return null;
+	public String[] getAltDescKey() {
+		return new String[] {
+				"itemAltLine.materialproperties",
+				""	
+		};
 	}
 	
 }

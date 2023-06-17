@@ -20,40 +20,38 @@ public abstract class BaseItem extends Item {
 	
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> text, TooltipFlag flag) {
-		text.add(Component.literal("test1"));
-		//shift and put desc first
-		if(text.size() > 1) {
-			for(int i = text.size() - 1; i >= 0 ; i--) {
-				text.add(i+1, text.get(i));
-			}
-		}
-
 		//put our description in
-		if(Screen.hasShiftDown() && this.getShiftDescKey() != null) {
-			text.add(0, Component.translatable(this.getShiftDescKey()));
-		} else {
-			text.add(0, Component.literal("Press ").withStyle(ChatFormatting.DARK_GRAY).append("[shift]").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.GRAY).append(" for item description.").withStyle(ChatFormatting.DARK_GRAY));
-		} 
-		if(Screen.hasControlDown() && this.getControlDescKey() != null) {
-			text.add(0, Component.translatable(this.getControlDescKey()));
-		} else {
-			text.add(0, Component.literal("Press ").withStyle(ChatFormatting.DARK_GRAY).append("[ctrl]").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.GRAY).append(" for item properties.").withStyle(ChatFormatting.DARK_GRAY));
-		} 
-		if(Screen.hasAltDown() && this.getAltDescKey() != null) {
-			text.add(0, Component.translatable(this.getAltDescKey()));
-		} else {
-			text.add(0, Component.literal("Press ").withStyle(ChatFormatting.DARK_GRAY).append("[alt]").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.GRAY).append(" for advanced information.").withStyle(ChatFormatting.DARK_GRAY));
-		} 
 		
+		if(this.getAltDescKey() != null) {
+			if(Screen.hasAltDown()) {
+				text.add(1, Component.translatable(this.getAltDescKey()[1]));
+			} else {
+				text.add(1, Component.translatable(this.getAltDescKey()[0]));
+			} 
+		}
+		if(this.getControlDescKey() != null) {
+			if(Screen.hasControlDown()) {
+				text.add(1, Component.translatable(this.getControlDescKey()[1]));
+			} else {
+				text.add(1, Component.translatable(this.getControlDescKey()[0]));
+			} 
+		}
+		if(this.getShiftDescKey() != null) {
+			if(Screen.hasShiftDown()) {
+				text.add(1, Component.translatable(this.getShiftDescKey()[1]));
+			} else {
+				text.add(1, Component.translatable(this.getShiftDescKey()[0]));
+			} 			
+		}
 		
 		super.appendHoverText(stack, level, text, flag);
 	}
 	
 	@Nullable
-	public abstract String getShiftDescKey();
+	public abstract String[] getShiftDescKey();
 	@Nullable
-	public abstract String getControlDescKey() ;
+	public abstract String[] getControlDescKey() ;
 	@Nullable
-	public abstract String getAltDescKey();
+	public abstract String[] getAltDescKey();
 
 }

@@ -32,35 +32,51 @@ public class AMI
     public static final Logger LOGGER = LogUtils.getLogger();
 
     //Reload Listeners
-    public static final MaterialRegistry MATERIALS = new AMIMaterialDefinitions(AMI.LOGGER);
+    public static MaterialRegistry MATERIALS;
 	
     
     public AMI()
     {
+    	LOGGER.info("Magical Industries (ami) has begun initialization");
+    	
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
 
-        //configs
-    	ModLoadingContext.get().registerConfig(Type.COMMON, AMIConfig.SPEC_COMMON, "amicore-common.toml");
-    	ModLoadingContext.get().registerConfig(Type.CLIENT, AMIConfig.SPEC_CLIENT, "amicore-client.toml");
-    	ModLoadingContext.get().registerConfig(Type.SERVER, AMIConfig.SPEC_SERVER, "amicore-server.toml");
-
-    	//registries!
-    	//materials register way earlier
-		AMIItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		new AMITabs();
-		AMIBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		AMIBlockEntities.BLOCK_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
     	MinecraftForge.EVENT_BUS.addListener( this::onAddReloadListeners );
-//    	MinecraftForge.EVENT_BUS.addListener( this::commonSetup );
+    	MinecraftForge.EVENT_BUS.addListener( this::commonSetup );
 		
 		//register main class for whatever needs
         MinecraftForge.EVENT_BUS.register(this);
+
+        
+    	//Registry Definitions
+        MATERIALS = new AMIMaterialDefinitions(AMI.LOGGER);
+        
+        LOGGER.info("Magical Industries (ami) has begun registration");
+
+        //configs
+    	ModLoadingContext.get().registerConfig(Type.COMMON, AMIConfig.SPEC_COMMON, "ami-common.toml");
+    	ModLoadingContext.get().registerConfig(Type.CLIENT, AMIConfig.SPEC_CLIENT, "ami-client.toml");
+    	ModLoadingContext.get().registerConfig(Type.SERVER, AMIConfig.SPEC_SERVER, "ami-server.toml");
+    	LOGGER.info("Configs registered.");
+    	
+    	//registries!
+    	//materials register way earlier
+    	LOGGER.info("Registering Items");
+		AMIItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+    	LOGGER.info("Registering Tabs");
+		new AMITabs();
+    	LOGGER.info("Registering Blocks");
+		AMIBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+    	LOGGER.info("Registering BlockEntities");
+		AMIBlockEntities.BLOCK_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+		
+    	LOGGER.info("Magical Industries (ami) has completed registration");
+        
+    	LOGGER.info("Magical Industries (ami) has completed initialization");
     }
 
-    @SubscribeEvent
     private void commonSetup(final FMLCommonSetupEvent event)
     {
     	
