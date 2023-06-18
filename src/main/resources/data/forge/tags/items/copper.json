@@ -1,0 +1,23 @@
+{
+  "values": [
+    "ami:copper_ingot",
+    "ami:copper_nugget",
+    "ami:copper_block",
+    "ami:copper_cake",
+    "ami:copper_bar_stock",
+    "ami:copper_sheet",
+    "ami:copper_rounded_sheet",
+    "ami:copper_large_sheet",
+    "ami:copper_coil",
+    "ami:copper_wire",
+    "ami:copper_rod",
+    "ami:copper_spring",
+    "ami:copper_small_spring",
+    "ami:copper_screw",
+    "ami:copper_bolt",
+    "ami:copper_gear",
+    "ami:copper_mechanical_component",
+    "ami:copper_dust",
+    "ami:copper_tiny_dust"
+  ]
+}

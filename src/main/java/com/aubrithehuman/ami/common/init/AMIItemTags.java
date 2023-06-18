@@ -25,13 +25,13 @@ public class AMIItemTags {
 		for (ResourceLocation material : AMI.MATERIALS.getData().keySet()) {
 			Map<MaterialForm, TagKey<Item>> materialFormsMap = new HashMap<>();
 			for(MaterialForm form : MaterialForm.values()) {
-				materialFormsMap.put(form, TagGenerator.itemForge(material.getPath() + "/" + form.getId()));
+				materialFormsMap.put(form, TagGenerator.itemForge(form.getId() + "s/"  + material.getPath()));
 			}
 			MATERIAL_TAGS.put(material, TagGenerator.itemForge(material.getPath()));
 			MATERIAL_TYPED_TAGS.put(material, materialFormsMap);	
 		}
 		for(MaterialForm form : MaterialForm.values()) {
-			TYPE_TAGS.put(form, TagGenerator.itemForge(form.getId()));
+			TYPE_TAGS.put(form, TagGenerator.itemForge(form.getId() + "s"));
 		}
 		
 	}

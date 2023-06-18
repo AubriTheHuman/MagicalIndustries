@@ -56,12 +56,12 @@ public class AMILangProvider extends LanguageProvider {
 		 * WRITING
 		 */
 		try {
-			AMI.LOGGER.info("Creating Material Tags");
+			AMI.LOGGER.info("Writing tag lang");
 			for (ResourceLocation material : AMI.MATERIALS.getData().keySet()) {
 				for(MaterialForm form : AMI.MATERIALS.get(material).getProperties().getForms()) {
 					//add to type specific and all to main tag
 					if(form == MaterialForm.NORMAL) continue;
-					writer.write("	\"tag.item.forge." + material.getPath() + "." + form.getId() + "\": \"" + 
+					writer.write("	\"tag.item.forge." + form.getId() + "s." + material.getPath() + "\": \"" + 
 					AMI.MATERIALS.get(material).getProperties().getTranslation() + " " + form.getTranslation() + "s\",\n");
 					
 				}
@@ -75,13 +75,28 @@ public class AMILangProvider extends LanguageProvider {
 			for(MaterialForm form : MaterialForm.values()) {
 				if(form == MaterialForm.NORMAL) continue;
 				writer.write("	\"tag.item.forge." 
-				+ form.getId() + "\": \"" 
+				+ form.getId() + "s\": \"" 
 				+ form.getTranslation() + "s\",\n");
 			}
 			
-			writer.close();
+			
+			AMI.LOGGER.info("Writing material lang");
+			for (ResourceLocation material : AMI.MATERIALS.getData().keySet()) {
+				for(MaterialForm form : AMI.MATERIALS.get(material).getProperties().getForms()) {
+					
+					if(form == MaterialForm.NORMAL) {
+						
+					} else {
+						writer.write("	\"item." + AMI.MOD_ID + "." + material.getPath() + "_" + form.getId() + "\": \"" + 
+						AMI.MATERIALS.get(material).getProperties().getTranslation() + " " + form.getTranslation() + "\",\n");
+					}
+					
+				}
+			}
 
 		// ===========================================================================================================================================
+
+			writer.close();
 			
 		} catch (IOException e) {
 			e.printStackTrace();

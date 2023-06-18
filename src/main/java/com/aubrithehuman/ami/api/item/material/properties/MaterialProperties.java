@@ -1,6 +1,7 @@
 package com.aubrithehuman.ami.api.item.material.properties;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -11,7 +12,7 @@ public class MaterialProperties {
 	String name;
 	String translation;
 	int color;
-	Set<MaterialForm> forms;
+	LinkedHashSet<MaterialForm> forms;
 //	TagKey<Item> tag;
 	
 	/**
@@ -19,14 +20,14 @@ public class MaterialProperties {
 	 * @param name
 	 * @param forms
 	 */
-	public MaterialProperties(String name, @NonNull Set<MaterialForm> forms) {
+	public MaterialProperties(String name, @NonNull LinkedHashSet<MaterialForm> forms) {
 		this.name = name;
 		this.forms = forms;
 	}
 	
 	public MaterialProperties(String name) {
 		this.name = name;
-		this.forms = new HashSet<>();
+		this.forms = new LinkedHashSet<>();
 	}
 	
 	public String getName() {
@@ -68,7 +69,7 @@ public class MaterialProperties {
 		return this;
 	}
 	
-	public MaterialProperties withForms(Set<MaterialForm> forms) {
+	public MaterialProperties withForms(LinkedHashSet<MaterialForm> forms) {
 		this.forms.addAll(forms);
 		return this;
 	}

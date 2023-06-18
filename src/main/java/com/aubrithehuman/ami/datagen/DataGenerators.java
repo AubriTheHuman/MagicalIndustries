@@ -19,7 +19,7 @@ public class DataGenerators {
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 		
 		generator.addProvider(true, new AMIRecipeProvider(generator));
-		generator.addProvider(true, new AMILootTableProvider(generator));
+//		generator.addProvider(false, new AMILootTableProvider(generator));
 		generator.addProvider(true, new AMIBlockStateProvider(generator, existingFileHelper));
 		generator.addProvider(true, new AMIItemModelProvider(generator, existingFileHelper));
 		BlockTagsProvider amiblocktags = new AMIBlockTagsProvider(generator, AMI.MOD_ID, existingFileHelper);

@@ -55,10 +55,10 @@ public class AMIItems {
     	AMI.LOGGER.info("Generating Material Items");
 		for (ResourceLocation material : AMI.MATERIALS.getData().keySet()) {
 			Map<MaterialForm, RegistryObject<Item>> materialFormsMap = new HashMap<>();
-			for(MaterialForm form : MaterialForm.values()) {
+			for(MaterialForm form : AMI.MATERIALS.get(material).getProperties().getForms()) {
 				materialFormsMap.put(form, 
 						ITEMS.register(material.getPath() + "_" + form.getId(), 
-								() -> new MaterialItem(new Item.Properties().tab(AMITabs.MATERIAL_TAB), material, form)));
+								() -> new MaterialItem(new Item.Properties().tab(AMITabs.METAL_TAB), material, form)));
 			}		
 			MATERIAL_ITEMS.put(material, materialFormsMap);	
 		}

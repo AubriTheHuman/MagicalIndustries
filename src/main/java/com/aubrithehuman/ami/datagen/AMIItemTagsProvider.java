@@ -35,11 +35,11 @@ public class AMIItemTagsProvider extends ItemTagsProvider {
 		for (ResourceLocation material : AMI.MATERIALS.getData().keySet()) {
 			for(MaterialForm form : AMI.MATERIALS.get(material).getProperties().getForms()) {
 				//add to type specific and all to main tag
-				this.tag(AMIItemTags.MATERIAL_TYPED_TAGS.get(material).get(form)).add(AMIItems.MATERIAL_ITEMS.get(material).get(form).get());
+				this.tag(AMIItemTags.MATERIAL_TYPED_TAGS.get(material).get(form)).add(AMIItems.MATERIAL_ITEMS.get(material).get(form).get()).replace();
 				
 				this.tag(AMIItemTags.MATERIAL_TAGS.get(material)).add(AMIItems.MATERIAL_ITEMS.get(material).get(form).get());
 
-				this.tag(AMIItemTags.TYPE_TAGS.get(form)).add(AMIItems.MATERIAL_ITEMS.get(material).get(form).get());
+				this.tag(AMIItemTags.TYPE_TAGS.get(form)).add(AMIItems.MATERIAL_ITEMS.get(material).get(form).get()).replace();
 				
 			}
 		}

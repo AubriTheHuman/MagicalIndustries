@@ -6,6 +6,7 @@ import com.aubrithehuman.ami.api.item.material.Material;
 import com.aubrithehuman.ami.api.item.material.registry.MaterialRegistry;
 import com.aubrithehuman.ami.common.init.AMIBlockEntities;
 import com.aubrithehuman.ami.common.init.AMIBlocks;
+import com.aubrithehuman.ami.common.init.AMIColors;
 import com.aubrithehuman.ami.common.init.AMIItemTags;
 import com.aubrithehuman.ami.common.init.AMIItems;
 import com.aubrithehuman.ami.common.init.AMIMaterialDefinitions;
@@ -61,6 +62,7 @@ public class AMI
     	ModLoadingContext.get().registerConfig(Type.CLIENT, AMIConfig.SPEC_CLIENT, "ami-client.toml");
     	ModLoadingContext.get().registerConfig(Type.SERVER, AMIConfig.SPEC_SERVER, "ami-server.toml");
     	LOGGER.info("Configs registered.");
+    	
     	
     	//registries!
     	//materials register way earlier

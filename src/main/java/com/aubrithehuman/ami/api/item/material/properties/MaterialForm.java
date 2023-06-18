@@ -1,13 +1,14 @@
 package com.aubrithehuman.ami.api.item.material.properties;
 
 import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public enum MaterialForm {
 
 	//Metals
-	NORMAL("", ""),
+	NORMAL("normal", ""),
 	INGOT("ingot", "Ingot"),
 	NUGGET("nugget", "Nugget"),
 	BLOCK("block", "Block"),
@@ -20,6 +21,7 @@ public enum MaterialForm {
 	WIRE("wire", "Wire"),
 	ROD("rod", "Rod"),
 	SPRING("spring", "Spring"),
+	SMALL_SPRING("small_spring", "Small Spring"),
 	SCREW("screw", "Screw"),
 	BOLT("bolt", "Bolt"),
 	GEAR("gear", "Gear"),
@@ -65,15 +67,18 @@ public enum MaterialForm {
 		
 		METALS(MaterialForm.INGOT, MaterialForm.NUGGET, MaterialForm.BLOCK, MaterialForm.CAKE, MaterialForm.BAR_STOCK, MaterialForm.SHEET, 
 				MaterialForm.ROUNDED_SHEET, MaterialForm.LARGE_SHEET, MaterialForm.COIL, MaterialForm.WIRE, MaterialForm.ROD, MaterialForm.SPRING, 
-				MaterialForm.SCREW, MaterialForm.BOLT, MaterialForm.GEAR, MaterialForm.MECHANICAL_COMPONENT, MaterialForm.DUST, MaterialForm.TINY_DUST);
+				MaterialForm.SMALL_SPRING, MaterialForm.SCREW, MaterialForm.BOLT, MaterialForm.GEAR, MaterialForm.MECHANICAL_COMPONENT, MaterialForm.DUST, MaterialForm.TINY_DUST);
 		
-		final Set<MaterialForm> types;
+		final LinkedHashSet<MaterialForm> types;
 		
 		Groups(MaterialForm... types) {
-			this.types = Arrays.stream(types).collect(Collectors.toSet());
+			this.types = new LinkedHashSet<>();
+			for (MaterialForm form : types) {
+				this.types.add(form);
+			}
 		}
 		
-		public Set<MaterialForm> getContainedTypes() {
+		public LinkedHashSet<MaterialForm> getContainedTypes() {
 			return this.types;
 		}
 		

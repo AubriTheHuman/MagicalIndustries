@@ -4,6 +4,9 @@ import org.slf4j.Logger;
 
 import com.aubrithehuman.ami.api.item.material.properties.MaterialProperties;
 
+import net.minecraft.client.color.item.ItemColor;
+import net.minecraft.world.item.ItemStack;
+
 public class Material {	
 	
 	public final String name;
@@ -21,6 +24,5 @@ public class Material {
 	
 	public MaterialProperties getProperties() {
 		return this.properties;
-	}
-	
+	}	
 }

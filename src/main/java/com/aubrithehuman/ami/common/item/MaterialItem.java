@@ -23,6 +23,7 @@ public class MaterialItem extends AMIItem {
 	final ResourceLocation materialDefinition;
 	
 	final MaterialForm form;
+	
 	MaterialState state;
 
 	public MaterialItem(Properties properties, ResourceLocation material, MaterialForm form) {
@@ -34,8 +35,19 @@ public class MaterialItem extends AMIItem {
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> text, TooltipFlag flag) {
 		//put our description in
-				
 		super.appendHoverText(stack, level, text, flag);
+		
+		if(Screen.hasAltDown()) {
+			text.add(2, Component.literal("test"));
+			text.add(3, Component.literal("test1"));
+			text.add(4, Component.literal("test2"));
+			text.add(5, Component.literal("test3"));
+			text.add(6, Component.literal("test4"));
+		} else {
+			text.add(2, Component.translatable("itemAltLine.materialproperties"));
+		} 
+		
+				
 	}
 
 	/**
@@ -59,10 +71,11 @@ public class MaterialItem extends AMIItem {
 	
 	@Override
 	public String[] getAltDescKey() {
-		return new String[] {
-				"itemAltLine.materialproperties",
-				""	
-		};
+		return null;
+	}
+
+	public ResourceLocation getMaterialDefinition() {
+		return materialDefinition;
 	}
 	
 }

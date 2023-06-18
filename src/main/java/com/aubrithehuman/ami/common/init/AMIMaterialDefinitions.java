@@ -18,8 +18,9 @@ public class AMIMaterialDefinitions extends MaterialRegistry {
 	@Override
 	public void addMaterials(Logger logger) {
 		//metals
-		build(new ResourceLocation(AMI.MOD_ID, "iron"), new MetalProperties("iron", MaterialForm.Groups.METALS.getContainedTypes()).withTranslation("Iron"), logger);	
-		build(new ResourceLocation(AMI.MOD_ID, "gold"), new MetalProperties("gold", MaterialForm.Groups.METALS.getContainedTypes()).withTranslation("Gold"), logger);		
+		build(new ResourceLocation(AMI.MOD_ID, "iron"), new MetalProperties("iron", MaterialForm.Groups.METALS.getContainedTypes()).withTranslation("Iron").withColor(9145236), logger);	
+		build(new ResourceLocation(AMI.MOD_ID, "gold"), new MetalProperties("gold", MaterialForm.Groups.METALS.getContainedTypes()).withTranslation("Gold").withColor(15385405), logger);		
+		build(new ResourceLocation(AMI.MOD_ID, "copper"), new MetalProperties("copper", MaterialForm.Groups.METALS.getContainedTypes()).withTranslation("Copper").withColor(12351070), logger);	
 		//nonmetal
 		
 	}
